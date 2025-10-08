@@ -173,6 +173,21 @@
             position: relative;
             overflow: hidden;
         }
+        
+        .problem-box::before, .proposta-card::before, .team-card::before, .step-card::before, .plan-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(218, 165, 32, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .problem-box:hover::before, .proposta-card:hover::before, .team-card:hover::before, .step-card:hover::before, .plan-card:hover::before {
+            left: 100%;
+        }
 
         .problem-box:hover, .proposta-card:hover, .team-card:hover, .step-card:hover, .cta-content:hover {
             transform: translateY(-10px) scale(1.02);
@@ -590,11 +605,278 @@
 
             section {
                 padding: 40px 0;
+                animation: fadeInUp 0.6s ease-out;
             }
-
+            
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            
+            @keyframes slideInRight {
+                from {
+                    opacity: 0;
+                    transform: translateX(-30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+            }
+            
+            @keyframes scaleIn {
+                from {
+                    opacity: 0;
+                    transform: scale(0.9);
+                }
+                to {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+            }
+            
+            @keyframes glow {
+                0%, 100% {
+                    box-shadow: 0 0 10px rgba(218, 165, 32, 0.3), 0 5px 20px rgba(0, 0, 0, 0.3);
+                }
+                50% {
+                    box-shadow: 0 0 20px rgba(218, 165, 32, 0.6), 0 5px 30px rgba(218, 165, 32, 0.3);
+                }
+            }
+            
+            /* Fundo preto sólido apenas no mobile */
             #hero {
+                background: #000000 !important;
                 padding: 50px 0;
                 min-height: auto;
+            }
+            
+            #problem, #proposta, #founder, #team, #work-process, #plans, #contact {
+                background: #000000 !important;
+            }
+            
+            /* Cards com gradiente azul e efeitos no mobile */
+            .proposta-card, .team-card, .step-card {
+                background: linear-gradient(135deg, #084d6e 0%, #000000 100%) !important;
+                border: 1px solid rgba(218, 165, 32, 0.3);
+                animation: slideInRight 0.6s ease-out;
+                transition: all 0.3s ease;
+            }
+            
+            .proposta-card:active, .team-card:active, .step-card:active {
+                transform: scale(0.98);
+                box-shadow: 0 0 15px rgba(218, 165, 32, 0.5);
+            }
+            
+            .problem-box {
+                background: linear-gradient(135deg, #084d6e 0%, #000000 100%) !important;
+                border: 1px solid rgba(218, 165, 32, 0.3);
+                animation: scaleIn 0.6s ease-out;
+                transition: all 0.3s ease;
+            }
+            
+            .problem-box:active {
+                transform: scale(0.98);
+            }
+            
+            .plan-card {
+                background: linear-gradient(135deg, #084d6e 0%, #000000 100%) !important;
+                border: 1px solid rgba(218, 165, 32, 0.3);
+                animation: scaleIn 0.7s ease-out;
+                transition: all 0.3s ease;
+            }
+            
+            .plan-card:active {
+                transform: scale(0.98);
+                box-shadow: 0 0 20px rgba(218, 165, 32, 0.6);
+            }
+            
+            .plan-card.featured {
+                animation: glow 2s ease-in-out infinite;
+                border: 2px solid #daa520;
+            }
+            
+            .workflow-step {
+                background: linear-gradient(135deg, #084d6e 0%, #000000 100%) !important;
+                border: 1px solid rgba(218, 165, 32, 0.3);
+                animation: fadeInUp 0.5s ease-out;
+                transition: all 0.3s ease;
+            }
+            
+            .workflow-step:active {
+                transform: scale(0.95);
+            }
+            
+            .setup-item {
+                background: linear-gradient(135deg, #084d6e 0%, #000000 100%) !important;
+                border: 1px solid rgba(218, 165, 32, 0.3);
+                animation: slideInRight 0.5s ease-out;
+                transition: all 0.3s ease;
+            }
+            
+            .setup-item:active {
+                transform: scale(0.98);
+            }
+            
+            .cta-content {
+                background: linear-gradient(135deg, #084d6e 0%, #000000 100%) !important;
+                border: 1px solid rgba(218, 165, 32, 0.3);
+                animation: glow 2.5s ease-in-out infinite;
+            }
+            
+            .guarantee-badge {
+                background: linear-gradient(135deg, #084d6e 0%, #000000 100%) !important;
+                border: 1px solid rgba(218, 165, 32, 0.3);
+                animation: scaleIn 0.6s ease-out;
+            }
+            
+            .setup-section {
+                background: linear-gradient(135deg, #084d6e 0%, #000000 100%) !important;
+                border: 1px solid rgba(218, 165, 32, 0.3);
+                animation: fadeInUp 0.6s ease-out;
+            }
+            
+            .next-steps-container {
+                background: linear-gradient(135deg, #084d6e 0%, #000000 100%) !important;
+                border: 1px solid rgba(218, 165, 32, 0.3);
+                animation: scaleIn 0.6s ease-out;
+            }
+            
+            .workflow-commitment {
+                background: linear-gradient(135deg, #084d6e 0%, #000000 100%) !important;
+                border: 1px solid rgba(218, 165, 32, 0.3);
+                animation: fadeInUp 0.6s ease-out;
+            }
+            
+            .contact-info-footer {
+                background: linear-gradient(135deg, #084d6e 0%, #000000 100%) !important;
+                border: 1px solid rgba(218, 165, 32, 0.3);
+                animation: fadeInUp 0.6s ease-out;
+            }
+            
+            /* Logo com efeito pulse */
+            #hero .logo {
+                animation: logoPulse 3s ease-in-out infinite;
+            }
+            
+            @keyframes logoPulse {
+                0%, 100% {
+                    transform: scale(1);
+                    filter: drop-shadow(0 10px 30px rgba(218, 165, 32, 0.3));
+                }
+                50% {
+                    transform: scale(1.05);
+                    filter: drop-shadow(0 15px 40px rgba(218, 165, 32, 0.5));
+                }
+            }
+            
+            /* Botão CTA com efeito especial */
+            .cta-button-link {
+                animation: buttonGlow 2s ease-in-out infinite;
+                position: relative;
+                overflow: hidden;
+            }
+            
+            @keyframes buttonGlow {
+                0%, 100% {
+                    box-shadow: 0 5px 20px rgba(218, 165, 32, 0.4);
+                }
+                50% {
+                    box-shadow: 0 8px 30px rgba(218, 165, 32, 0.7);
+                }
+            }
+            
+            .cta-button-link:active {
+                transform: scale(0.95);
+            }
+            
+            /* Certificações com entrada animada */
+            .cert-badge {
+                animation: fadeInUp 0.4s ease-out;
+                animation-fill-mode: both;
+            }
+            
+            .cert-badge:nth-child(1) { animation-delay: 0.1s; }
+            .cert-badge:nth-child(2) { animation-delay: 0.2s; }
+            .cert-badge:nth-child(3) { animation-delay: 0.3s; }
+            .cert-badge:nth-child(4) { animation-delay: 0.4s; }
+            .cert-badge:nth-child(5) { animation-delay: 0.5s; }
+            .cert-badge:nth-child(6) { animation-delay: 0.6s; }
+            .cert-badge:nth-child(7) { animation-delay: 0.7s; }
+            
+            .cert-badge:active {
+                transform: scale(0.95);
+                background-color: #daa520;
+                color: #000000;
+            }
+            
+            /* Foto da fundadora com efeito */
+            .founder-photo {
+                animation: scaleIn 0.8s ease-out;
+                transition: all 0.3s ease;
+            }
+            
+            .founder-photo:active {
+                transform: scale(1.05);
+            }
+            
+            /* Stats com entrada dramática */
+            .stat {
+                animation: statBounce 1s ease-out;
+            }
+            
+            @keyframes statBounce {
+                0% {
+                    opacity: 0;
+                    transform: scale(0.5) rotate(-10deg);
+                }
+                60% {
+                    transform: scale(1.1) rotate(5deg);
+                }
+                100% {
+                    opacity: 1;
+                    transform: scale(1) rotate(0deg);
+                }
+            }
+            
+            /* Títulos H2 com animação */
+            h2 {
+                animation: slideInRight 0.6s ease-out;
+                position: relative;
+            }
+            
+            h2::after {
+                content: '';
+                position: absolute;
+                bottom: -10px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 60px;
+                height: 3px;
+                background: linear-gradient(90deg, transparent, #daa520, transparent);
+                animation: lineExpand 1s ease-out;
+            }
+            
+            @keyframes lineExpand {
+                from {
+                    width: 0;
+                }
+                to {
+                    width: 60px;
+                }
+            }
+            
+            /* Remover fade-in no mobile */
+            .fade-in-section {
+                opacity: 1 !important;
+                transform: none !important;
+                visibility: visible !important;
             }
             
             #plans {
@@ -657,6 +939,7 @@
 
             .achievement {
                 transform: none !important;
+                animation: slideInRight 0.5s ease-out;
             }
 
             .team-card:hover,
@@ -753,17 +1036,25 @@
         }
 
         @media (max-width: 480px) {
-            h1 { font-size: 1.4em; }
-            h2 { font-size: 1.3em; margin-bottom: 25px; }
-            h3 { font-size: 1.1em; }
-            p, li { font-size: 0.9em; }
+            h1 { font-size: 1.6em; }
+            h2 { font-size: 1.5em; margin-bottom: 25px; }
+            h3 { font-size: 1.3em; }
+            p, li { font-size: 0.85em; }
 
             .container {
                 padding: 0 12px;
             }
 
             section {
-                padding: 30px 0;
+                padding: 25px 0;
+            }
+            
+            #plans {
+                padding: 20px 0 5px 0;
+            }
+            
+            #contact {
+                padding: 5px 0 20px 0;
             }
 
             #hero .logo {
@@ -796,7 +1087,50 @@
 
             .workflow-commitment ul li,
             .plan-features li {
-                font-size: 0.9em;
+                font-size: 0.85em;
+            }
+            
+            .setup-section {
+                padding: 20px;
+                margin-top: 15px;
+            }
+            
+            .next-steps-container {
+                padding: 20px;
+                margin-bottom: 10px;
+            }
+            
+            .cta-final-section {
+                padding: 10px 0;
+            }
+            
+            .cta-content {
+                padding: 25px 15px;
+            }
+            
+            .contact-info-footer {
+                padding: 20px;
+                margin-top: 10px;
+            }
+            
+            .certifications {
+                gap: 8px;
+                margin-top: 20px;
+            }
+            
+            .cert-badge {
+                font-size: 0.75em;
+                padding: 6px 12px;
+            }
+            
+            .step-card h3,
+            .setup-item h3 {
+                font-size: 1.2em;
+            }
+            
+            .step-card p,
+            .setup-item p {
+                font-size: 0.85em;
             }
         }
     </style>
