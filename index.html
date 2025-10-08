@@ -81,7 +81,7 @@
         }
         
         #contact {
-            padding-top: 60px;
+            padding-top: 0;
         }
         #problem { background-image: linear-gradient(180deg, #084d6e 0%, #000000 100%); }
         #proposta { background-image: linear-gradient(180deg, #000000 0%, #084d6e 100%); }
@@ -134,7 +134,7 @@
             width: 90%;
             max-width: 400px;
             height: auto;
-            margin-bottom: 20px;
+            margin: 0 auto 20px;
             filter: drop-shadow(0 10px 30px rgba(218, 165, 32, 0.3));
             display: block;
         }
@@ -285,6 +285,7 @@
             flex-wrap: wrap;
             gap: 15px;
             margin-top: 30px;
+            justify-content: center;
         }
 
         .cert-badge {
@@ -578,10 +579,10 @@
         }
 
         @media (max-width: 1024px) {
-            h1 { font-size: 1.8em; }
-            h2 { font-size: 1.6em; margin-bottom: 30px; }
-            h3 { font-size: 1.3em; }
-            p, li { font-size: 1em; }
+            h1 { font-size: 2em; }
+            h2 { font-size: 1.8em; margin-bottom: 30px; }
+            h3 { font-size: 1.5em; }
+            p, li { font-size: 0.95em; }
 
             .container {
                 padding: 0 15px;
@@ -597,11 +598,11 @@
             }
             
             #plans {
-                padding: 30px 0;
+                padding: 30px 0 10px 0;
             }
             
             #contact {
-                padding: 30px 0;
+                padding: 10px 0 30px 0;
             }
 
             #hero .logo {
@@ -675,7 +676,7 @@
 
             .setup-section {
                 padding: 25px;
-                margin-top: 40px;
+                margin-top: 20px;
                 margin-bottom: 0;
             }
 
@@ -692,11 +693,11 @@
             }
 
             .plan-features li {
-                font-size: 0.95em;
+                font-size: 0.9em;
             }
 
             .cta-final-section {
-                padding: 20px 0;
+                padding: 15px 0;
             }
 
             .cta-content {
@@ -708,7 +709,7 @@
             }
 
             .cta-content p {
-                font-size: 1em;
+                font-size: 0.95em;
             }
 
             .cta-button-link {
@@ -720,7 +721,7 @@
 
             .next-steps-container {
                 padding: 25px;
-                margin-bottom: 30px;
+                margin-bottom: 15px;
             }
 
             .step-card {
@@ -729,7 +730,7 @@
 
             .contact-info-footer {
                 padding: 25px;
-                margin-top: 20px;
+                margin-top: 15px;
             }
 
             .workflow-commitment {
@@ -739,6 +740,15 @@
 
             .workflow {
                 margin-bottom: 20px;
+            }
+            
+            .certifications {
+                gap: 10px;
+            }
+            
+            .cert-badge {
+                font-size: 0.85em;
+                padding: 8px 15px;
             }
         }
 
