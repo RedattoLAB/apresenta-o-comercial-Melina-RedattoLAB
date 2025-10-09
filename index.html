@@ -280,21 +280,21 @@
         /* Grid Layouts */
         .grid-2 {
             display: grid;
-            grid-template-columns: 1fr;
+            grid-template-columns: repeat(2, 1fr);
             gap: 30px;
             margin-top: 40px;
         }
 
         .grid-3 {
             display: grid;
-            grid-template-columns: 1fr;
+            grid-template-columns: repeat(3, 1fr);
             gap: 30px;
             margin-top: 40px;
         }
 
         .grid-4 {
             display: grid;
-            grid-template-columns: 1fr;
+            grid-template-columns: repeat(4, 1fr);
             gap: 25px;
             margin-top: 40px;
         }
@@ -302,33 +302,46 @@
         /* Plans specific grid - 3 columns */
         .plans-grid {
             display: grid;
-            grid-template-columns: 1fr; /* Mobile First */
+            grid-template-columns: 1fr;
             gap: 30px;
             margin-top: 40px;
         }
-        
+
+        /* Apenas para desktop e telas maiores */
         @media (min-width: 769px) {
             .plans-grid {
-                grid-template-columns: repeat(3, 1fr); /* 3 colunas para desktop */
-            }
-            .grid-2 {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .grid-3 {
                 grid-template-columns: repeat(3, 1fr);
             }
         }
-
+        
+        /* Apenas para telas médias e maiores */
+        @media (min-width: 769px) and (max-width: 1023px) {
+            .grid-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        /* Apenas para desktop */
         @media (min-width: 1024px) {
             .grid-4 {
                 grid-template-columns: repeat(4, 1fr);
             }
         }
 
+        /* Mobile Responsive (até 768px) */
         @media (max-width: 768px) {
-            .founder-layout {
+            section {
+                padding: 50px 0;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+            
+            /* Todos os grids em 1 coluna no mobile */
+            .grid-2, .grid-3, .grid-4, .plans-grid, .founder-layout {
                 grid-template-columns: 1fr;
-                gap: 30px;
+                gap: 20px;
                 text-align: center;
             }
 
@@ -371,6 +384,9 @@
         .cta-button-contact {
             display: block;
             width: 100%;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
             background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
             color: var(--black) !important;
             padding: 22px 30px;
