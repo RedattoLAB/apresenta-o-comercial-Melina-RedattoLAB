@@ -86,10 +86,11 @@
         #problem { background-image: linear-gradient(180deg, #084d6e 0%, #000000 100%); }
         #proposta { background-image: linear-gradient(180deg, #000000 0%, #084d6e 100%); }
         #founder { background-image: linear-gradient(180deg, #084d6e 0%, #000000 100%); }
-        #team { background-image: linear-gradient(180deg, #000000 0%, #084d6e 100%); }
-        #work-process { background-image: linear-gradient(180deg, #084d6e 0%, #000000 100%); }
-        #plans { background-image: linear-gradient(180deg, #000000 0%, #084d6e 100%); }
-        #contact { background-image: linear-gradient(180deg, #084d6e 0%, #000000 100%); }
+        #diferencial { background-image: linear-gradient(180deg, #000000 0%, #084d6e 100%); }
+        #team { background-image: linear-gradient(180deg, #084d6e 0%, #000000 100%); }
+        #work-process { background-image: linear-gradient(180deg, #000000 0%, #084d6e 100%); }
+        #plans { background-image: linear-gradient(180deg, #084d6e 0%, #000000 100%); }
+        #contact { background-image: linear-gradient(180deg, #000000 0%, #084d6e 100%); }
 
         h1, h2, h3 {
             font-family: 'Urbanist', sans-serif;
@@ -167,14 +168,14 @@
             }
         }
 
-        .problem-box, .proposta-card, .achievement, .cert-badge, .team-card, .workflow-step, .plan-card, .setup-item, .step-card, .cta-content {
+        .problem-box, .proposta-card, .achievement, .cert-badge, .team-card, .workflow-step, .plan-card, .setup-item, .step-card, .cta-content, .diferencial-card {
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
         }
         
-        .problem-box::before, .proposta-card::before, .team-card::before, .step-card::before, .plan-card::before {
+        .problem-box::before, .proposta-card::before, .team-card::before, .step-card::before, .plan-card::before, .diferencial-card::before {
             content: '';
             position: absolute;
             top: 0;
@@ -185,11 +186,11 @@
             transition: left 0.6s ease;
         }
         
-        .problem-box:hover::before, .proposta-card:hover::before, .team-card:hover::before, .step-card:hover::before, .plan-card:hover::before {
+        .problem-box:hover::before, .proposta-card:hover::before, .team-card:hover::before, .step-card:hover::before, .plan-card:hover::before, .diferencial-card:hover::before {
             left: 100%;
         }
 
-        .problem-box:hover, .proposta-card:hover, .team-card:hover, .step-card:hover, .cta-content:hover {
+        .problem-box:hover, .proposta-card:hover, .team-card:hover, .step-card:hover, .cta-content:hover, .diferencial-card:hover {
             transform: translateY(-10px) scale(1.02);
             box-shadow: 0 15px 30px rgba(218, 165, 32, 0.3);
             border-color: #daa520;
@@ -203,7 +204,7 @@
             transform: scale(1.1);
         }
 
-        .proposta-card, .team-card, .step-card {
+        .proposta-card, .team-card, .step-card, .diferencial-card {
             background: rgba(255, 255, 255, 0.05);
             border: none;
             border-radius: 15px;
@@ -243,6 +244,62 @@
             gap: 30px;
             margin-top: 40px;
             width: 100%;
+        }
+
+        .diferencial-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+            width: 100%;
+        }
+
+        .diferencial-card {
+            background: rgba(8, 77, 110, 0.3);
+            border: 2px solid rgba(218, 165, 32, 0.3);
+            text-align: left;
+        }
+
+        .diferencial-card .icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .pioneer-offer {
+            background: linear-gradient(135deg, rgba(218, 165, 32, 0.2) 0%, rgba(8, 77, 110, 0.3) 100%);
+            border: 2px solid #daa520;
+            border-radius: 20px;
+            padding: 50px;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .pioneer-offer h3 {
+            font-size: 2.2em;
+            margin-bottom: 30px;
+        }
+
+        .offer-benefits {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 40px 0;
+            text-align: left;
+        }
+
+        .offer-benefit {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #daa520;
+        }
+
+        .offer-exchange {
+            background: rgba(8, 77, 110, 0.4);
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
         }
 
         .founder-section {
@@ -317,79 +374,6 @@
             transform: scale(1.1);
             background-color: #daa520;
             color: #000000;
-        }
-
-        .results-section {
-            width: 100%;
-            margin-top: 60px;
-        }
-
-        .results-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-            margin-top: 40px;
-            width: 100%;
-        }
-
-        .result-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 2px solid rgba(218, 165, 32, 0.3);
-            border-radius: 20px;
-            padding: 35px 25px;
-            text-align: center;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .result-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(218, 165, 32, 0.1), transparent);
-            transition: left 0.6s ease;
-        }
-
-        .result-card:hover::before {
-            left: 100%;
-        }
-
-        .result-card:hover {
-            transform: translateY(-15px) scale(1.05);
-            box-shadow: 0 20px 50px rgba(218, 165, 32, 0.4);
-            border-color: #daa520;
-        }
-
-        .result-icon {
-            font-size: 3em;
-            margin-bottom: 15px;
-            filter: grayscale(20%);
-        }
-
-        .result-stat {
-            font-size: 3em;
-            color: #daa520;
-            font-weight: 800;
-            font-family: 'Urbanist', sans-serif;
-            margin-bottom: 15px;
-            line-height: 1;
-        }
-
-        .result-card h4 {
-            color: #ffffff;
-            font-size: 1.3em;
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-
-        .result-card p {
-            font-size: 1em;
-            line-height: 1.6;
-            color: rgba(255, 255, 255, 0.85);
         }
 
         .team-highlights {
@@ -678,340 +662,61 @@
 
             section {
                 padding: 40px 0;
-                animation: fadeInUp 0.6s ease-out;
             }
             
-            @keyframes fadeInUp {
-                from {
-                    opacity: 0;
-                    transform: translateY(30px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-            
-            @keyframes slideInRight {
-                from {
-                    opacity: 0;
-                    transform: translateX(-30px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateX(0);
-                }
-            }
-            
-            @keyframes scaleIn {
-                from {
-                    opacity: 0;
-                    transform: scale(0.9);
-                }
-                to {
-                    opacity: 1;
-                    transform: scale(1);
-                }
-            }
-            
-            @keyframes glow {
-                0%, 100% {
-                    box-shadow: 0 0 10px rgba(218, 165, 32, 0.3), 0 5px 20px rgba(0, 0, 0, 0.3);
-                }
-                50% {
-                    box-shadow: 0 0 20px rgba(218, 165, 32, 0.6), 0 5px 30px rgba(218, 165, 32, 0.3);
-                }
-            }
-            
-            /* Fundo preto sólido apenas no mobile */
             #hero {
                 background: #000000 !important;
                 padding: 50px 0;
                 min-height: auto;
             }
             
-            #problem, #proposta, #founder, #team, #work-process, #plans, #contact {
+            #problem, #proposta, #founder, #diferencial, #team, #work-process, #plans, #contact {
                 background: #000000 !important;
             }
             
-            /* Cards com gradiente azul e efeitos no mobile */
-            .proposta-card, .team-card, .step-card {
+            .proposta-card, .team-card, .step-card, .diferencial-card {
                 background: linear-gradient(135deg, #084d6e 0%, #000000 100%) !important;
                 border: 1px solid rgba(218, 165, 32, 0.3);
-                animation: slideInRight 0.6s ease-out;
-                transition: all 0.3s ease;
-            }
-            
-            .proposta-card:active, .team-card:active, .step-card:active {
-                transform: scale(0.98);
-                box-shadow: 0 0 15px rgba(218, 165, 32, 0.5);
             }
             
             .problem-box {
                 background: linear-gradient(135deg, #084d6e 0%, #000000 100%) !important;
                 border: 1px solid rgba(218, 165, 32, 0.3);
-                animation: scaleIn 0.6s ease-out;
-                transition: all 0.3s ease;
-            }
-            
-            .problem-box:active {
-                transform: scale(0.98);
             }
             
             .plan-card {
                 background: linear-gradient(135deg, #084d6e 0%, #000000 100%) !important;
                 border: 1px solid rgba(218, 165, 32, 0.3);
-                animation: scaleIn 0.7s ease-out;
-                transition: all 0.3s ease;
-            }
-            
-            .plan-card:active {
-                transform: scale(0.98);
-                box-shadow: 0 0 20px rgba(218, 165, 32, 0.6);
             }
             
             .plan-card.featured {
-                animation: glow 2s ease-in-out infinite;
                 border: 2px solid #daa520;
             }
             
-            .workflow-step {
-                background: linear-gradient(135deg, #084d6e 0%, #000000 100%) !important;
-                border: 1px solid rgba(218, 165, 32, 0.3);
-                animation: fadeInUp 0.5s ease-out;
-                transition: all 0.3s ease;
-            }
-            
-            .workflow-step:active {
-                transform: scale(0.95);
-            }
-            
-            .setup-item {
-                background: linear-gradient(135deg, #084d6e 0%, #000000 100%) !important;
-                border: 1px solid rgba(218, 165, 32, 0.3);
-                animation: slideInRight 0.5s ease-out;
-                transition: all 0.3s ease;
-            }
-            
-            .setup-item:active {
-                transform: scale(0.98);
-            }
-            
-            .cta-content {
-                background: linear-gradient(135deg, #084d6e 0%, #000000 100%) !important;
-                border: 1px solid rgba(218, 165, 32, 0.3);
-                animation: glow 2.5s ease-in-out infinite;
-            }
-            
-            .guarantee-badge {
-                background: linear-gradient(135deg, #084d6e 0%, #000000 100%) !important;
-                border: 1px solid rgba(218, 165, 32, 0.3);
-                animation: scaleIn 0.6s ease-out;
-            }
-            
-            .setup-section {
-                background: linear-gradient(135deg, #084d6e 0%, #000000 100%) !important;
-                border: 1px solid rgba(218, 165, 32, 0.3);
-                animation: fadeInUp 0.6s ease-out;
-            }
-            
-            .next-steps-container {
-                background: linear-gradient(135deg, #084d6e 0%, #000000 100%) !important;
-                border: 1px solid rgba(218, 165, 32, 0.3);
-                animation: scaleIn 0.6s ease-out;
-            }
-            
             .workflow-commitment {
-                background: linear-gradient(135deg, #084d6e 0%, #000000 100%) !important;
-                border: 1px solid rgba(218, 165, 32, 0.3);
-                animation: fadeInUp 0.6s ease-out;
-            }
-            
-            .contact-info-footer {
-                background: linear-gradient(135deg, #084d6e 0%, #000000 100%) !important;
-                border: 1px solid rgba(218, 165, 32, 0.3);
-                animation: fadeInUp 0.6s ease-out;
-            }
-            
-            /* Logo com efeito pulse */
-            #hero .logo {
-                animation: logoPulse 3s ease-in-out infinite;
-            }
-            
-            @keyframes logoPulse {
-                0%, 100% {
-                    transform: scale(1);
-                    filter: drop-shadow(0 10px 30px rgba(218, 165, 32, 0.3));
-                }
-                50% {
-                    transform: scale(1.05);
-                    filter: drop-shadow(0 15px 40px rgba(218, 165, 32, 0.5));
-                }
-            }
-            
-            /* Botão CTA com efeito especial */
-            .cta-button-link {
-                animation: buttonGlow 2s ease-in-out infinite;
-                position: relative;
-                overflow: hidden;
-            }
-            
-            @keyframes buttonGlow {
-                0%, 100% {
-                    box-shadow: 0 5px 20px rgba(218, 165, 32, 0.4);
-                }
-                50% {
-                    box-shadow: 0 8px 30px rgba(218, 165, 32, 0.7);
-                }
-            }
-            
-            .cta-button-link:active {
-                transform: scale(0.95);
-            }
-            
-            /* Certificações com entrada animada */
-            .cert-badge {
-                animation: fadeInUp 0.4s ease-out;
-                animation-fill-mode: both;
-            }
-            
-            .cert-badge:nth-child(1) { animation-delay: 0.1s; }
-            .cert-badge:nth-child(2) { animation-delay: 0.2s; }
-            .cert-badge:nth-child(3) { animation-delay: 0.3s; }
-            .cert-badge:nth-child(4) { animation-delay: 0.4s; }
-            .cert-badge:nth-child(5) { animation-delay: 0.5s; }
-            .cert-badge:nth-child(6) { animation-delay: 0.6s; }
-            .cert-badge:nth-child(7) { animation-delay: 0.7s; }
-            
-            .cert-badge:active {
-                transform: scale(0.95);
-                background-color: #daa520;
-                color: #000000;
-            }
-            
-            /* Resultados - mobile */
-            .results-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .result-card {
-                animation: scaleIn 0.6s ease-out;
-                background: linear-gradient(135deg, #084d6e 0%, #000000 100%) !important;
-                border: 2px solid rgba(218, 165, 32, 0.5);
-            }
-            
-            .result-card:active {
-                transform: scale(0.98);
-                box-shadow: 0 0 25px rgba(218, 165, 32, 0.6);
-            }
-            
-            .result-stat {
-                font-size: 2.5em;
-            }
-            
-            .result-icon {
-                font-size: 2.5em;
-            }
-            
-            .result-card h4 {
-                font-size: 1.2em;
-            }
-            
-            .result-card p {
-                font-size: 0.9em;
-            }
-            
-            /* Foto da fundadora com efeito */
-            .founder-photo {
-                animation: scaleIn 0.8s ease-out;
-                transition: all 0.3s ease;
-            }
-            
-            .founder-photo:active {
-                transform: scale(1.05);
-            }
-            
-            /* Stats com entrada dramática */
-            .stat {
-                animation: statBounce 1s ease-out;
-            }
-            
-            @keyframes statBounce {
-                0% {
-                    opacity: 0;
-                    transform: scale(0.5) rotate(-10deg);
-                }
-                60% {
-                    transform: scale(1.1) rotate(5deg);
-                }
-                100% {
-                    opacity: 1;
-                    transform: scale(1) rotate(0deg);
-                }
-            }
-            
-            /* Títulos H2 com animação */
-            h2 {
-                animation: slideInRight 0.6s ease-out;
-                position: relative;
-            }
-            
-            h2::after {
-                content: '';
-                position: absolute;
-                bottom: -10px;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 60px;
-                height: 3px;
-                background: linear-gradient(90deg, transparent, #daa520, transparent);
-                animation: lineExpand 1s ease-out;
-            }
-            
-            @keyframes lineExpand {
-                from {
-                    width: 0;
-                }
-                to {
-                    width: 60px;
-                }
-            }
-            
-            /* Remover fade-in no mobile */
-            .fade-in-section {
-                opacity: 1 !important;
-                transform: none !important;
-                visibility: visible !important;
-            }
-            
-            #plans {
-                padding: 30px 0 10px 0;
-            }
-            
-            #contact {
-                padding: 10px 0 30px 0;
-            }
-
-            #hero .logo {
-                max-width: 250px;
-                width: 85%;
-            }
-
-            #hero h1 {
-                font-size: 1.5em;
-            }
-
-            #hero .subtitle {
-                font-size: 1.2em;
-            }
-
-            .stat {
-                font-size: 2.5em;
-            }
-
-            .problem-box {
                 padding: 25px;
+                margin-top: 20px;
+            }
+
+            .workflow {
+                margin-bottom: 20px;
+            }
+            
+            .certifications {
+                gap: 10px;
+            }
+            
+            .cert-badge {
+                font-size: 0.85em;
+                padding: 8px 15px;
+            }
+            
+            .pioneer-offer {
+                padding: 30px 20px;
+            }
+            
+            .pioneer-offer h3 {
+                font-size: 1.6em;
             }
 
             .proposta-cards,
@@ -1019,7 +724,8 @@
             .setup-grid,
             .team-highlights,
             .workflow,
-            .next-steps-grid {
+            .next-steps-grid,
+            .diferencial-grid {
                 grid-template-columns: 1fr;
                 gap: 20px;
             }
@@ -1043,22 +749,6 @@
                 text-align: center;
             }
 
-            .achievement {
-                transform: none !important;
-                animation: slideInRight 0.5s ease-out;
-            }
-
-            .team-card:hover,
-            .workflow-step:hover,
-            .proposta-card:hover,
-            .step-card:hover,
-            .cta-content:hover,
-            .cert-badge:hover,
-            .setup-item:hover,
-            .result-card:hover {
-                transform: none;
-            }
-
             .guarantee-badge {
                 margin-top: 30px;
                 padding: 20px;
@@ -1070,75 +760,59 @@
                 margin-bottom: 0;
             }
 
-            .plan-card {
-                padding: 30px 20px;
+            .workflow-step {
+                background: linear-gradient(135deg, #084d6e 0%, #000000 100%) !important;
+                border: 1px solid rgba(218, 165, 32, 0.3);
             }
-
-            .plan-card:hover {
-                transform: none;
+            
+            .setup-item {
+                background: linear-gradient(135deg, #084d6e 0%, #000000 100%) !important;
+                border: 1px solid rgba(218, 165, 32, 0.3);
             }
-
-            .plan-price {
-                font-size: 2em;
-            }
-
-            .plan-features li {
-                font-size: 0.9em;
-            }
-
-            .cta-final-section {
-                padding: 15px 0;
-            }
-
+            
             .cta-content {
-                padding: 30px 20px;
+                background: linear-gradient(135deg, #084d6e 0%, #000000 100%) !important;
+                border: 1px solid rgba(218, 165, 32, 0.3);
             }
-
-            .cta-content h2 {
-                font-size: 1.4em;
+            
+            .guarantee-badge {
+                background: linear-gradient(135deg, #084d6e 0%, #000000 100%) !important;
+                border: 1px solid rgba(218, 165, 32, 0.3);
             }
-
-            .cta-content p {
-                font-size: 0.95em;
+            
+            .setup-section {
+                background: linear-gradient(135deg, #084d6e 0%, #000000 100%) !important;
+                border: 1px solid rgba(218, 165, 32, 0.3);
             }
-
-            .cta-button-link {
-                font-size: 1.1em;
-                padding: 15px 30px;
-                max-width: 95%;
-                word-break: break-word;
-            }
-
+            
             .next-steps-container {
-                padding: 25px;
-                margin-bottom: 15px;
+                background: linear-gradient(135deg, #084d6e 0%, #000000 100%) !important;
+                border: 1px solid rgba(218, 165, 32, 0.3);
             }
-
-            .step-card {
-                padding: 20px;
-            }
-
-            .contact-info-footer {
-                padding: 25px;
-                margin-top: 15px;
-            }
-
+            
             .workflow-commitment {
-                padding: 25px;
-                margin-top: 20px;
-            }
-
-            .workflow {
-                margin-bottom: 20px;
+                background: linear-gradient(135deg, #084d6e 0%, #000000 100%) !important;
+                border: 1px solid rgba(218, 165, 32, 0.3);
             }
             
-            .certifications {
-                gap: 10px;
+            .contact-info-footer {
+                background: linear-gradient(135deg, #084d6e 0%, #000000 100%) !important;
+                border: 1px solid rgba(218, 165, 32, 0.3);
             }
             
-            .cert-badge {
-                font-size: 0.85em;
-                padding: 8px 15px;
+            .pioneer-offer {
+                background: linear-gradient(135deg, #084d6e 0%, #000000 100%) !important;
+                border: 2px solid #daa520;
+            }
+            
+            .offer-benefits {
+                grid-template-columns: 1fr;
+            }
+            
+            .fade-in-section {
+                opacity: 1 !important;
+                transform: none !important;
+                visibility: visible !important;
             }
         }
 
@@ -1240,20 +914,47 @@
                 font-size: 0.85em;
             }
             
-            .result-stat {
+            .pioneer-offer {
+                padding: 25px 15px;
+            }
+            
+            .pioneer-offer h3 {
+                font-size: 1.4em;
+            }
+
+            .team-card:hover,
+            .workflow-step:hover,
+            .proposta-card:hover,
+            .step-card:hover,
+            .cta-content:hover,
+            .cert-badge:hover,
+            .setup-item:hover,
+            .diferencial-card:hover {
+                transform: none;
+            }
+
+            .plan-card {
+                padding: 30px 20px;
+            }
+
+            .plan-card:hover {
+                transform: none;
+            }
+
+            .plan-price {
                 font-size: 2em;
             }
-            
-            .result-icon {
-                font-size: 2em;
+
+            .plan-features li {
+                font-size: 0.9em;
             }
-            
-            .result-card h4 {
-                font-size: 1.1em;
+
+            .cta-content h2 {
+                font-size: 1.4em;
             }
-            
-            .result-card p {
-                font-size: 0.85em;
+
+            .cta-content p {
+                font-size: 0.95em;
             }
         }
     </style>
@@ -1302,12 +1003,12 @@
                     </div>
                     <div class="proposta-card">
                         <h3>Estratégia personalizada</h3>
-                        <p>Não vendemos pacotes prontos. Criamos estratégias sob medida para seu negócio e objetivos.</p>
+                        <p>Pacotes com entregáveis claros, mas estratégia 100% sob medida. Combinamos e adaptamos cada elemento para seus objetivos específicos.</p>
                     </div>
                 </div>
                 <div class="guarantee-badge">
                     <h3>Garantia de 90 dias: sua decisão sem riscos.</h3>
-                    <p>Confiamos tanto em nossa metodologia que oferecemos: se não houver resultados em 90 dias, você pode sair sem custo, reestruturar sua estratégia conosco ou receber 40% de desconto na próxima mensalidade. Seu sucesso é o nosso compromisso.</p>
+                    <p>Confiamos tanto em nossa metodologia que oferecemos: se não houver resultados em 90 dias, você pode sair sem custo, reestruturar sua estratégia conosco ou receber 30% de desconto na próxima mensalidade. Seu sucesso é o nosso compromisso.</p>
                 </div>
             </div>
         </section>
@@ -1334,48 +1035,86 @@
                         </div>
                         
                         <div class="achievement">
-                            <p><span class="highlight">Resultados tangíveis:</span> histórias de sucesso que incluem crescimento exponencial de marcas e vendas expressivas em tempo recorde.</p>
+                            <p><span class="highlight">Comprometida com resultados:</span> construindo cases documentados com transparência total e metodologia comprovada.</p>
                         </div>
 
                         <div class="certifications">
-                            <div class="cert-badge">Meta blueprint</div>
-                            <div class="cert-badge">Google ads</div>
-                            <div class="cert-badge">Google analytics 4</div>
-                            <div class="cert-badge">Google tag manager</div>
+                            <div class="cert-badge">Meta Blueprint</div>
+                            <div class="cert-badge">Google Ads</div>
+                            <div class="cert-badge">Google Analytics 4</div>
+                            <div class="cert-badge">Google Tag Manager</div>
                             <div class="cert-badge">HubSpot</div>
-                            <div class="cert-badge">SEMrush academy</div>
-                            <div class="cert-badge">RD station</div>
+                            <div class="cert-badge">SEMrush Academy</div>
+                            <div class="cert-badge">RD Station</div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <section id="diferencial" class="fade-in-section">
+            <div class="container">
+                <h2>Por que RedattoLAB é diferente</h2>
+                <p style="font-size: 1.4em; max-width: 900px; margin: 0 auto 40px;">Enquanto outras agências prometem números mágicos, nós entregamos transparência, metodologia e compromisso real com seus resultados.</p>
                 
-                <div class="results-section">
-                    <h3 style="text-align: center; color: #daa520; font-size: 2em; margin: 60px 0 40px;">Resultados que falam por si</h3>
-                    <div class="results-grid">
-                        <div class="result-card">
-                            <div class="result-icon">📈</div>
-                            <div class="result-stat">900%</div>
-                            <h4>Crescimento Exponencial</h4>
-                            <p>Aumento na taxa de conversão de uma construtora em apenas 6 meses</p>
+                <div class="diferencial-grid">
+                    <div class="diferencial-card">
+                        <span class="icon">🎯</span>
+                        <h3>Transparência Total</h3>
+                        <p>Dashboard em tempo real, reuniões periódicas e acesso completo a todas as métricas. Você vê exatamente onde cada real está sendo investido e qual o retorno gerado.</p>
+                    </div>
+                    
+                    <div class="diferencial-card">
+                        <span class="icon">🔒</span>
+                        <h3>Garantia Real de 90 Dias</h3>
+                        <p>Não são palavras vazias. Se em 90 dias não houver resultados mensuráveis, você sai sem custo adicional ou recebe 30% de desconto. Seu risco é zero.</p>
+                    </div>
+                    
+                    <div class="diferencial-card">
+                        <span class="icon">📊</span>
+                        <h3>Foco em ROI, Não Vaidade</h3>
+                        <p>Esqueça likes e impressões. Cada estratégia é desenhada para gerar leads qualificados e vendas reais. Métricas que impactam seu faturamento.</p>
+                    </div>
+                    
+                    <div class="diferencial-card">
+                        <span class="icon">⚡</span>
+                        <h3>Metodologia DACE® Proprietária</h3>
+                        <p>Sistema exclusivo de 4 fases (Diagnóstico, Arquitetura, Conteúdo, Escala) desenvolvido em 10+ anos de experiência para maximizar conversão.</p>
+                    </div>
+                </div>
+
+                <div class="pioneer-offer">
+                    <h3>🚀 Oferta Especial para Clientes Pioneiros</h3>
+                    <p style="font-size: 1.3em; margin-bottom: 30px;">Estamos construindo nosso portfólio de cases documentados. Por isso, oferecemos condições exclusivas para os primeiros clientes que acreditarem em nossa metodologia.</p>
+                    
+                    <div class="offer-benefits">
+                        <div class="offer-benefit">
+                            <h3 style="font-size: 1.4em;">✅ 30% de Desconto</h3>
+                            <p>Nos primeiros 90 dias de qualquer plano. Economia real para testar nossa metodologia com investimento reduzido.</p>
                         </div>
-                        <div class="result-card">
-                            <div class="result-icon">💰</div>
-                            <div class="result-stat">R$ 2,5M</div>
-                            <h4>Em Vendas Geradas</h4>
-                            <p>Para uma incorporadora em 90 dias através de tráfego pago estratégico</p>
+                        
+                        <div class="offer-benefit">
+                            <h3 style="font-size: 1.4em;">✅ Setup GRÁTIS</h3>
+                            <p>R$ 997 de economia. Toda a estrutura técnica e estratégica montada sem custo adicional.</p>
                         </div>
-                        <div class="result-card">
-                            <div class="result-icon">🎯</div>
-                            <div class="result-stat">68%</div>
-                            <h4>Redução de Custo</h4>
-                            <p>No custo por lead qualificado após otimização de campanhas</p>
+                        
+                        <div class="offer-benefit">
+                            <h3 style="font-size: 1.4em;">✅ Prioridade Absoluta</h3>
+                            <p>Atendimento VIP com resposta em até 2h úteis e reuniões semanais de acompanhamento nos primeiros 90 dias.</p>
                         </div>
-                        <div class="result-card">
-                            <div class="result-icon">🏆</div>
-                            <div class="result-stat">350+</div>
-                            <h4>Unidades Vendidas</h4>
-                            <p>Em lançamentos imobiliários através de estratégias digitais integradas</p>
+                        
+                        <div class="offer-benefit">
+                            <h3 style="font-size: 1.4em;">✅ Garantia Tripla</h3>
+                            <p>Sem resultados em 90 dias? Escolha: sair sem custo, reestruturar estratégia ou 30% OFF no próximo mês.</p>
                         </div>
+                    </div>
+                    
+                    <div class="offer-exchange">
+                        <h3 style="font-size: 1.5em; margin-bottom: 20px;">Em troca, pedimos apenas:</h3>
+                        <p style="font-size: 1.1em;">📹 Permissão para documentar sua jornada e resultados</p>
+                        <p style="font-size: 1.1em;">💬 Depoimento honesto sobre a experiência (positivo ou construtivo)</p>
+                        <p style="font-size: 1.1em;">📊 Autorização para usar métricas reais em materiais de marketing</p>
+                        <p style="font-size: 1.3em; margin-top: 30px; color: #daa520; font-weight: 600;">Vagas limitadas: apenas 5 clientes pioneiros</p>
                     </div>
                 </div>
             </div>
@@ -1444,13 +1183,15 @@
         <section id="plans" class="fade-in-section">
             <div class="container">
                 <h2>Planos RedattoLAB: escolha seu caminho para o sucesso</h2>
-                <p style="font-size: 1.3em; margin-bottom: 30px; color: #daa520;">Invista no seu futuro. Preços promocionais válidos para os primeiros clientes.</p>
+                <p style="font-size: 1.3em; margin-bottom: 10px; color: #daa520;">Invista no seu futuro com condições especiais.</p>
+                <p style="font-size: 1.1em; margin-bottom: 30px;">Clientes pioneiros recebem 30% OFF nos primeiros 90 dias + Setup gratuito</p>
                 
                 <div class="plans-container">
                     <div class="plan-card">
                         <h3>Essencial</h3>
-                        <div class="plan-price">R$ 1.500</div>
-                        <div class="plan-period">por mês</div>
+                        <div class="plan-price">R$ 1.050</div>
+                        <div class="plan-period">por mês (pioneiros)</div>
+                        <p style="font-size: 0.9em; text-decoration: line-through; color: rgba(255,255,255,0.5);">De R$ 1.500</p>
                         <p style="font-size: 1em; margin: 20px 0; line-height: 1.6;">Construa uma máquina de vendas online que trabalha para você 24/7, atraindo os primeiros compradores qualificados pelo digital.</p>
                         <ul class="plan-features">
                             <li><strong>Tráfego pago:</strong> 1 campanha estratégica para máximo retorno</li>
@@ -1463,8 +1204,9 @@
                     </div>
                     <div class="plan-card featured">
                         <h3>Performance</h3>
-                        <div class="plan-price">R$ 3.000</div>
-                        <div class="plan-period">por mês</div>
+                        <div class="plan-price">R$ 2.100</div>
+                        <div class="plan-period">por mês (pioneiros)</div>
+                        <p style="font-size: 0.9em; text-decoration: line-through; color: rgba(255,255,255,0.5);">De R$ 3.000</p>
                         <p style="color: #daa520; font-weight: 600; margin-bottom: 20px;">⭐ mais popular</p>
                         <p style="font-size: 1em; margin: 20px 0; line-height: 1.6;">Escale suas vendas com múltiplos canais trabalhando simultaneamente e funil automatizado que nutre leads até o fechamento.</p>
                         <ul class="plan-features">
@@ -1478,8 +1220,9 @@
                     </div>
                     <div class="plan-card">
                         <h3>Autoridade</h3>
-                        <div class="plan-price">R$ 4.000</div>
-                        <div class="plan-period">por mês</div>
+                        <div class="plan-price">R$ 2.800</div>
+                        <div class="plan-period">por mês (pioneiros)</div>
+                        <p style="font-size: 0.9em; text-decoration: line-through; color: rgba(255,255,255,0.5);">De R$ 4.000</p>
                         <p style="font-size: 1em; margin: 20px 0; line-height: 1.6;">Torne-se a escolha óbvia do mercado com estratégia premium que atrai clientes de alto valor e inteligência competitiva.</p>
                         <ul class="plan-features">
                             <li><strong>Tráfego premium:</strong> 4-5 campanhas + remarketing estratégico</li>
@@ -1493,8 +1236,9 @@
                 </div>
 
                 <div class="setup-section">
-                    <h3>Setup profissional: a base para seu sucesso</h3>
-                    <p style="text-align: center; font-size: 1.3em; margin-bottom: 20px;">R$ 997 (à vista ou 2x de R$ 499)</p>
+                    <h3>Setup profissional: GRATUITO para clientes pioneiros</h3>
+                    <p style="text-align: center; font-size: 1.3em; margin-bottom: 10px; text-decoration: line-through; color: rgba(255,255,255,0.5);">R$ 997 (à vista ou 2x de R$ 499)</p>
+                    <p style="text-align: center; font-size: 1.5em; color: #daa520; font-weight: 600; margin-bottom: 20px;">100% GRATUITO</p>
                     <p style="text-align: center; margin-bottom: 30px;">Em 5 a 7 dias úteis, estruturamos toda a base técnica e estratégica que impulsionará seus resultados.</p>
                     <div class="setup-grid">
                         <div class="setup-item">
@@ -1545,9 +1289,9 @@
                 
                 <div class="cta-final-section">
                     <div class="cta-content">
-                        <h2>Sua concorrência está gerando leads enquanto você lê. Pronto para agir?</h2>
-                        <p>Fale diretamente com nossa fundadora, Melina Menezes Pereda.</p>
-                        <a href="https://wa.me/5548999867086" target="_blank" class="cta-button-link">Quero leads que convertem!</a>
+                        <h2>Apenas 5 vagas para clientes pioneiros</h2>
+                        <p>Fale diretamente com nossa fundadora, Melina Menezes Pereda, e garanta sua vaga com 30% OFF + Setup gratuito.</p>
+                        <a href="https://wa.me/5548999867086" target="_blank" class="cta-button-link">Quero ser um cliente pioneiro!</a>
                     </div>
                 </div>
 
@@ -1563,7 +1307,7 @@
 
                 <div style="margin-top: 60px; padding-top: 30px;">
                     <p style="color: #daa520; font-size: 1.6em; font-weight: 600;">RedattoLAB: do terreno ao topo. Inteligência digital para conversão imobiliária.</p>
-                    <p style="font-size: 1.2em; margin-top: 10px;">Menos desperdício, mais fechamento de negócios.</p>
+                    <p style="font-size: 1.2em; margin-top: 10px;">Transparência, metodologia e resultados reais.</p>
                 </div>
             </div>
         </section>
