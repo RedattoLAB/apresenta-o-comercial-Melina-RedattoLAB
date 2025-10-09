@@ -319,6 +319,79 @@
             color: #000000;
         }
 
+        .results-section {
+            width: 100%;
+            margin-top: 60px;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+            width: 100%;
+        }
+
+        .result-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(218, 165, 32, 0.3);
+            border-radius: 20px;
+            padding: 35px 25px;
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .result-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(218, 165, 32, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .result-card:hover::before {
+            left: 100%;
+        }
+
+        .result-card:hover {
+            transform: translateY(-15px) scale(1.05);
+            box-shadow: 0 20px 50px rgba(218, 165, 32, 0.4);
+            border-color: #daa520;
+        }
+
+        .result-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+            filter: grayscale(20%);
+        }
+
+        .result-stat {
+            font-size: 3em;
+            color: #daa520;
+            font-weight: 800;
+            font-family: 'Urbanist', sans-serif;
+            margin-bottom: 15px;
+            line-height: 1;
+        }
+
+        .result-card h4 {
+            color: #ffffff;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .result-card p {
+            font-size: 1em;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
         .team-highlights {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -816,6 +889,39 @@
                 color: #000000;
             }
             
+            /* Resultados - mobile */
+            .results-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .result-card {
+                animation: scaleIn 0.6s ease-out;
+                background: linear-gradient(135deg, #084d6e 0%, #000000 100%) !important;
+                border: 2px solid rgba(218, 165, 32, 0.5);
+            }
+            
+            .result-card:active {
+                transform: scale(0.98);
+                box-shadow: 0 0 25px rgba(218, 165, 32, 0.6);
+            }
+            
+            .result-stat {
+                font-size: 2.5em;
+            }
+            
+            .result-icon {
+                font-size: 2.5em;
+            }
+            
+            .result-card h4 {
+                font-size: 1.2em;
+            }
+            
+            .result-card p {
+                font-size: 0.9em;
+            }
+            
             /* Foto da fundadora com efeito */
             .founder-photo {
                 animation: scaleIn 0.8s ease-out;
@@ -948,7 +1054,8 @@
             .step-card:hover,
             .cta-content:hover,
             .cert-badge:hover,
-            .setup-item:hover {
+            .setup-item:hover,
+            .result-card:hover {
                 transform: none;
             }
 
@@ -1132,6 +1239,22 @@
             .setup-item p {
                 font-size: 0.85em;
             }
+            
+            .result-stat {
+                font-size: 2em;
+            }
+            
+            .result-icon {
+                font-size: 2em;
+            }
+            
+            .result-card h4 {
+                font-size: 1.1em;
+            }
+            
+            .result-card p {
+                font-size: 0.85em;
+            }
         }
     </style>
 </head>
@@ -1222,6 +1345,36 @@
                             <div class="cert-badge">HubSpot</div>
                             <div class="cert-badge">SEMrush academy</div>
                             <div class="cert-badge">RD station</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="results-section">
+                    <h3 style="text-align: center; color: #daa520; font-size: 2em; margin: 60px 0 40px;">Resultados que falam por si</h3>
+                    <div class="results-grid">
+                        <div class="result-card">
+                            <div class="result-icon">📈</div>
+                            <div class="result-stat">900%</div>
+                            <h4>Crescimento Exponencial</h4>
+                            <p>Aumento na taxa de conversão de uma construtora em apenas 6 meses</p>
+                        </div>
+                        <div class="result-card">
+                            <div class="result-icon">💰</div>
+                            <div class="result-stat">R$ 2,5M</div>
+                            <h4>Em Vendas Geradas</h4>
+                            <p>Para uma incorporadora em 90 dias através de tráfego pago estratégico</p>
+                        </div>
+                        <div class="result-card">
+                            <div class="result-icon">🎯</div>
+                            <div class="result-stat">68%</div>
+                            <h4>Redução de Custo</h4>
+                            <p>No custo por lead qualificado após otimização de campanhas</p>
+                        </div>
+                        <div class="result-card">
+                            <div class="result-icon">🏆</div>
+                            <div class="result-stat">350+</div>
+                            <h4>Unidades Vendidas</h4>
+                            <p>Em lançamentos imobiliários através de estratégias digitais integradas</p>
                         </div>
                     </div>
                 </div>
